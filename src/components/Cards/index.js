@@ -77,7 +77,7 @@ function Cards({ days }) {
       <CardMedia
         className={classes.media}
         image={`https://www.weatherbit.io/static/img/icons/${days.weather.icon}.png`}
-        title="Paella dish"
+        title="weather icon"
       />
       <CardContent>
         <Typography

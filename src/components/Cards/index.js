@@ -31,12 +31,27 @@ const useStyles = makeStyles((theme) => ({
   typographyFont: {
     color: "#fef1d2",
   },
+  today: {
+    backgroundColor: "black",
+  },
 }));
 
 function Cards({ days }) {
   const classes = useStyles();
+  var weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const date = new Date(days.valid_date);
+  const today = weekDays[date.getDay()];
+  console.log(today);
   return (
-    <Card className={classes.root}>
+    <Card className={`${classes.root}`}>
       <CardHeader className={classes.header} title={days.temp} />
       <CardMedia
         className={classes.media}
@@ -45,7 +60,7 @@ function Cards({ days }) {
       />
       <CardContent>
         <Typography variant="body2" component="div">
-          {days.valid_date}
+          {today}
         </Typography>
         <Typography
           className={classes.typographyFont}

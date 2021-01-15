@@ -5,7 +5,7 @@ import Cards from "../Cards";
 import { Grid } from "@material-ui/core";
 function DisplayMenu() {
   const { data } = useContext(DataContext);
-  //console.log(data);
+
   return (
     <>
       <Grid container xs={12} justify="center" item>

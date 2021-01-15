@@ -12,9 +12,12 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       boxShadow:
         "0 30px 30px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23)",
+      cursor: "pointer",
+      opacity: "1",
     },
-    backgroundColor: "#46acbb",
+    backgroundColor: "#53c3c4",
     color: "#fff",
+    opacity: "0.8",
   },
   media: {
     margin: "0 auto",
@@ -41,8 +44,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
   },
   today: {
+    border: "1px solid rgba(0, 0, 0, 0.19) ",
     boxShadow:
       "0 30px 30px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23)",
+    opacity: "1",
   },
 }));
 

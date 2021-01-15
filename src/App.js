@@ -6,12 +6,14 @@ import { Grid } from "@material-ui/core";
 
 function App() {
   return (
-    <DataProvider>
-      <Grid container justify="center">
-        <SelectMenu></SelectMenu>
-        <DisplayMenu></DisplayMenu>
-      </Grid>
-    </DataProvider>
+    <div className="app">
+      <DataProvider>
+        <Grid container justify="center">
+          <SelectMenu></SelectMenu>
+          <DisplayMenu></DisplayMenu>
+        </Grid>
+      </DataProvider>
+    </div>
   );
 }
 

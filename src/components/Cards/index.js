@@ -13,13 +13,14 @@ const useStyles = makeStyles((theme) => ({
       boxShadow:
         "0 30px 30px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23)",
     },
-    backgroundColor: "#cec5fa",
+    backgroundColor: "#46acbb",
+    color: "#fff",
   },
   media: {
     margin: "0 auto",
-    width: 50,
-    height: 50,
-    borderRadius: "4px",
+    width: 80,
+    height: 80,
+    borderRadius: "15px",
     boxShadow: "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)",
     position: "relative",
     zIndex: 1000,
@@ -30,9 +31,18 @@ const useStyles = makeStyles((theme) => ({
   },
   typographyFont: {
     color: "#fef1d2",
+    fontSize: "16px",
+    border: "2px solid #fff",
+    borderRadius: "5px",
+    marginTop: "5px",
+    padding: "5px",
+  },
+  typographyText: {
+    fontSize: "20px",
   },
   today: {
-    backgroundColor: "black",
+    boxShadow:
+      "0 30px 30px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23)",
   },
 }));
 
@@ -49,32 +59,42 @@ function Cards({ days }) {
   ];
   const date = new Date(days.valid_date);
   const today = weekDays[date.getDay()];
-  console.log(today);
+  const monthDay = new Date().getDate();
+  const monthToday = new Date(days.valid_date).getDate();
+
   return (
-    <Card className={`${classes.root}`}>
-      <CardHeader className={classes.header} title={days.temp} />
+    <Card
+      className={`${classes.root} ${
+        monthDay === monthToday ? classes.today : null
+      }`}
+    >
+      <CardHeader className={classes.header} title={`${days.temp}°`} />
       <CardMedia
         className={classes.media}
         image={`https://www.weatherbit.io/static/img/icons/${days.weather.icon}.png`}
         title="Paella dish"
       />
       <CardContent>
-        <Typography variant="body2" component="div">
+        <Typography
+          variant="body2"
+          component="div"
+          className={classes.typographyText}
+        >
           {today}
         </Typography>
         <Typography
           className={classes.typographyFont}
-          variant="body1"
+          variant="body2"
           component="div"
         >
-          min:{days.min_temp}
+          min:{days.min_temp}°
         </Typography>
         <Typography
           className={classes.typographyFont}
-          variant="body1"
+          variant="body2"
           component="div"
         >
-          max:{days.max_temp}
+          max:{days.max_temp}°
         </Typography>
       </CardContent>
     </Card>

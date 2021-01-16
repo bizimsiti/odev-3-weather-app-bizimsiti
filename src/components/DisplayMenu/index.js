@@ -1,11 +1,9 @@
-import React from "react";
 import { useContext } from "react";
 import DataContext from "../../contexts/DataContext";
 import Cards from "../Cards";
 import { Grid } from "@material-ui/core";
 function DisplayMenu() {
   const { data } = useContext(DataContext);
-
   return (
     <>
       <Grid container xs={12} justify="center" item>
@@ -14,11 +12,6 @@ function DisplayMenu() {
             <Cards days={days}></Cards>
           </Grid>
         ))}
-      </Grid>
-      <Grid container xs={6} justify="center" item>
-        <Grid xs={12} item></Grid>
-        <Grid xs={12} item></Grid>
-        <Grid xs={12} item></Grid>
       </Grid>
     </>
   );

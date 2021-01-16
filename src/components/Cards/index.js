@@ -73,7 +73,7 @@ function Cards({ days }) {
         monthDay === monthToday ? classes.today : null
       }`}
     >
-      <CardHeader className={classes.header} title={`${days.temp}°`} />
+      <CardHeader className={classes.header} title={`${days.temp}°C`} />
       <CardMedia
         className={classes.media}
         image={`https://www.weatherbit.io/static/img/icons/${days.weather.icon}.png`}
@@ -92,14 +92,14 @@ function Cards({ days }) {
           variant="body2"
           component="div"
         >
-          min:{days.min_temp}°
+          min:{days.min_temp}°C
         </Typography>
         <Typography
           className={classes.typographyFont}
           variant="body2"
           component="div"
         >
-          max:{days.max_temp}°
+          max:{days.max_temp}°C
         </Typography>
       </CardContent>
     </Card>
